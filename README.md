@@ -1,5 +1,7 @@
 # Staskme
 
+Lien vers heroku : https://staskme.herokuapp.com/
+
 Il s'agit d'un site internet dynamique qui permet de réserver des prestations de conciergerie de luxe mais à destination de la classe moyenne. L'interface te permet de t'inscrire rapidement et de choisir parmi les catégories suivantes :
 
 - Courses livraison, lourd
