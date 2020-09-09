@@ -33,10 +33,15 @@ Un user peut s’inscrire à plusieurs missions et une mission peut avoir qu'un 
 3.2. Front :
 -Une première page qui vous obligera à vous inscrire pour acceder à tout.
 ie : Fb, Insta etc...
+
 -Formulaire d'inscription +connexion + suppression de compte
+
 -Des cards pour les profils mais aussi utilisable pour la mise en place de certain service qui seront proposer.
+
 -Utilisation d'un Kit UI et/ou Bootstrap pour du responsive design.
+
 -Ajout de slider ou d'animation en js.
+
 -Le changement de leurs coordonnées sera autorisé y compris leur donne de connexion au site etc.
 
 
@@ -51,6 +56,7 @@ Un système de paiement qui permettra de payer les honoraires (Stripe)
 
 
 3.4. Mes besoins techniques
+
 4 personnes coéquipiers. Deux plus à l'aise en Back et deux en Front.
 
 4. La version minimaliste mais fonctionnelle qu'il faut avoir livré la première semaine
