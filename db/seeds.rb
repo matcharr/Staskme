@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Mission.destroy_all
+10.times do
+   Mission.create(title:Faker::Company.industry, description:Faker::Movie.quote, start_date:"2021-01-01")
+end
