@@ -50,3 +50,5 @@ Un site internet fonctionnel permettant de pouvoir s'inscrire, se connecter, pay
 
 6. Le mentor
 Comme mentor, nous avons Julien Tribouillier(https://www.linkedin.com/in/julien-tribouillier), ancien de THP. C'est actuellement un Développeur Freelance Ruby on Rails Backend.
+
+
