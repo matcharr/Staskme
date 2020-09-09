@@ -21,6 +21,7 @@ Le tarif est unique, à savoir 100 CHF (Francs suisses).
 
 
 3. Concrètement et techniquement
+
 3.1. Base de données
 
 Un prototype de BDD pour notre projet :
@@ -29,7 +30,7 @@ Un model User
 Un model Mission
 Un user peut s’inscrire à plusieurs missions et une mission peut avoir qu'un seul user. On passera par une table de jointure appelée Enrolment
 
-3.2. Front
+3.2. Front :
 -Une première page qui vous obligera à vous inscrire pour acceder à tout.
 ie : Fb, Insta etc...
 -Formulaire d'inscription +connexion + suppression de compte
