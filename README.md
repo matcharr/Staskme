@@ -14,7 +14,9 @@ Il s'agit d'un site internet dynamique qui permet de réserver des prestations d
 Le tarif est unique, à savoir 100 CHF (Francs suisses).
 
 2. Parcours utilisateur
+
 -Côté client : Lorsque qu'un utilisateur/client s’enregistre, il est redirigé vers un Dashboard qui lui permet de sélectionner quelle mission il souhaite voir effectuer. Par la suite il notifié si la mission proposée est acceptée et par quel collaborateur. L’utilisateur peut aussi créer un événement pour cela il doit remplir un formulaire chaque mission a une catégorie. L'utilisateur peut voir ses missions actives dans son profil.
+
 -Côté collaborateur : lorsque qu'un utilisateur/collaborateur se logue, il est redirigé vers un Dashboard qui lui permet de sélectionner quelle mission il souhaite effectuer. S’il clique sur une mission et qu'il s'enregistre le créateur/client de la mission est notifié qu’un nouvel utilisateur/collaborateur s'est inscrit. L’utilisateur peut aussi créer un événement pour cela il doit remplir un formulaire chaque mission a une catégorie. L'utilisateur peut voir ses missions actives dans son profil.
 
 
