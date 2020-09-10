@@ -1,4 +1,6 @@
 class MissionsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
    def new
       @mission = Mission.new
    end
@@ -15,6 +17,9 @@ class MissionsController < ApplicationController
    private
 
    def mission_params
-     params.require(:mission).permit(:title, :start_date, :description)
+    params.require(:mission).permit(:title, :start_date, :description, :category_id)
+   end
+
+   def category_params
    end
 end
