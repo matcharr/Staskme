@@ -55,3 +55,5 @@ end
 gem 'faker'
 gem 'table_print'
 gem 'devise'
+gem 'stripe'
+gem 'dotenv-rails'
