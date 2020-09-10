@@ -2,7 +2,8 @@ class Admin::AdminController < ApplicationController
 	before_action :admin?
 
 	def index
-		
+		@employees = User.where(employed: true)
+		@pending = Mission.where(statut: false)
 	end
 
 private
