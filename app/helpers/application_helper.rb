@@ -1,9 +1,5 @@
 module ApplicationHelper
 	def only_admin
-		if current_user
-			return current_user.is_admin
-		else
-			return false
-		end
+		current_user.is_admin
 	end
 end
