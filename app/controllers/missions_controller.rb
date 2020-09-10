@@ -3,7 +3,6 @@ class MissionsController < ApplicationController
 
   def new
     @mission = Mission.new
-    @categories = Category.all
   end
 
   def create

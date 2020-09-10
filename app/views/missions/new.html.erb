@@ -21,7 +21,7 @@
 
 <div class="form-group">
   <label>Catégorie</label>
-  <%= f.select :category_id, Category.all.collect { |c| [c.title, c.id] } , include_blank: true, class: 'form-control'%>
+  <%= f.collection_select :category_id, Category.all, :id, :title %>
 </div>
 <%= form_tag missions_path do %>
   <article>
