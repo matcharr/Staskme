@@ -24,7 +24,7 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <% if is_admin? %>
+        <% if current_user && only_admin %>
           <%= link_to "Mon profile admin", admin_root_path , class: 'nav-link' %>
         <% elsif current_user %>
           <%= link_to "Mon profile", user_path(current_user.id), class: 'nav-link' %>
