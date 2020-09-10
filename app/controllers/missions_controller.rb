@@ -7,7 +7,6 @@ class MissionsController < ApplicationController
 
    def index
       @missions = Mission.all
-      puts "^^^^^^^^^^^^^^^^^^^^^^^^^^"
    end
 
    def show 
