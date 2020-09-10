@@ -1,6 +1,6 @@
 class Mission < ApplicationRecord
-	has_one :specialisation
-	has_one :category, through: :specialisation
+	belongs_to :category
+	belongs_to :user
 
 	validates :title, presence: true
 	validates :title, length: { in: 3..100 }

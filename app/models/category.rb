@@ -1,4 +1,3 @@
 class Category < ApplicationRecord
-	has_many :specialisations
-	has_many :missions, through: :specialisations
+	has_many :missions
 end
