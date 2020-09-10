@@ -2,24 +2,43 @@
   <h1 class="display-4">Créer votre évènement</h1>
 </div>
 
-<p>
-  <%= form_for @mission do |f| %>
+<%= form_for @mission do |f| %>
 <div class="form-group">
   <label>Titre de la mission </label>
   <%= f.text_field :title, class: 'form-control'%>
 </div>
 
 <div class="form-group">
-  <label>Date de l'event (aaaa/mm/dd)</label>
-  <%= f.text_field :start_date, class: 'form-control'%>
+  <label>Date de l'event</label>
+  <%= f.date_select :start_date, class: 'form-control'%>
+  <%= f.time_select :start_date, :ignore_date => true, class: 'form-control'%>
 </div>
 
 <div class="form-group">
   <label>Description de l'event</label>
   <%= f.text_area :description, class: 'form-control'%>
 </div>
+
 <div class="form-group">
-  <button type="submit" class="btn btn-primary">Valider</button>
+  <label>Catégorie</label>
+  <%= f.select :category_id, Category.all.collect { |c| [ c.title, c.id ] }, include_blank: true, class: 'form-control'%>
 </div>
+<%= form_tag missions_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Créer un évènement"
+          data-amount="10000"
+          data-currency="chf"
+          data-locale="auto"></script>
 <% end %>
-</p>
+<% end %>
