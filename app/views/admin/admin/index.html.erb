@@ -1,0 +1,27 @@
+<div class="container">
+
+<h3 class="text-center">Bienvenue sur votre dashboard admin !</h3>
+
+<div class="card">
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+		<li class="list-group-item">Les employés : </li>
+    	<% @employees.each do |e| %>
+    		<%= link_to e.mail, user_path(e.id), class: 'list-group-item' %>
+    	<% end %>
+	</ul>
+  </div>
+</div>
+</br>
+<div class="card">
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+		<li class="list-group-item">Les missions en attente : </li>
+    	<% @pending.each do |mission| %>
+  			<%= link_to mission.title, mission_path(mission.id), class: 'list-group-item' %>
+    	<% end %>
+	</ul>
+  </div>
+</div>
+
+</div>
