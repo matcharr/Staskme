@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
-   before_action :authenticate_user
+   before_action :authenticate_user, only: [:show]
 
-   def update
-      @user = user_finder
-      @user.update(user_params)
-      redirect_to root_path
-   end
+  #  def update
+  #     @user = user_finder
+  #     @user.update(user_params)
+  #     redirect_to root_path
+  #  end
 
-   def show
+  def show
     @user = user_finder
-   end
+  end
 
    private
 
@@ -18,9 +18,7 @@ class UsersController < ApplicationController
     end
   
     def authenticate_user
-      if current_user != user_finder
-        redirect_to root_path
-      end
+      redirect_to root_path if current_user != user_finder unless current_user.is_admin == true
     end
   
     def user_params
