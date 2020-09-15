@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
    before_action :authenticate_user, only: [:show]
 
-  #  def update
-  #     @user = user_finder
-  #     @user.update(user_params)
-  #     redirect_to root_path
-  #  end
+   def update
+    @user= current_user 
+    @user.update(employed:true) 
+    redirect_to root_path
+  end
 
-  def show
+   def show
     @user = user_finder
   end
 
