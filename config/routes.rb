@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :missions, only:[:new, :create, :show]
   namespace :admin do
       root 'admin#index'
+      resources :dashboard, only:[:show]
  end
 end
