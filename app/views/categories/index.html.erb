@@ -21,11 +21,13 @@
 </div>
 
 <div class="row mb-4">
-  <div class="col-md-8">
+<% if current_user %>
+<div class="col-md-8">
     <p>Vous avez le temps ? Vous recherchez un petit travail pour arrondir les fins de mois ?</p>
   </div>
   <div class="col-md-4">
-    <a class="btn btn-lg btn-secondary btn-block" href="#">Rejoindre l'équipe</a>
+    <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'patch', class: 'btn btn-lg btn-secondary' %>
+  <% end %>
   </div>
 </div>
 
