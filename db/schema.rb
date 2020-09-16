@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 2020_09_15_235154) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "enrolments", force: :cascade do |t|
+  create_table "enrollments", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "mission_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["mission_id"], name: "index_enrolments_on_mission_id"
-    t.index ["user_id"], name: "index_enrolments_on_user_id"
+    t.index ["mission_id"], name: "index_enrollments_on_mission_id"
+    t.index ["user_id"], name: "index_enrollments_on_user_id"
   end
 
   create_table "missions", force: :cascade do |t|
