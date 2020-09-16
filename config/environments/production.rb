@@ -111,4 +111,6 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.logger = Logger.new(STDOUT)
+  config.action_mailer.default_url_options = { :host => 'https://staskme.herokuapp.com/' }
+  # config.action_mailer.delivery_method = :mailjet_api
 end
