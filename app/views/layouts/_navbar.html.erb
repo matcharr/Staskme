@@ -1,5 +1,9 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
+		<a href="#" class="navbar-brand">
+			<!-- Logo Image -->
+			<img src="https://i.imgur.com/A8gv3pI.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+		</a>
 		<%= link_to "Staskme", root_path, class: 'navbar-brand' %>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -8,13 +12,6 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="#">Contact</a>
-				</li>
-				<li class="nav-item">
-					<% if current_user %>
-					<%= link_to "Se déconnecter", destroy_user_session_path, method: "delete", class: 'btn btn-danger'%>
-					<% else %>
-					<%= link_to "S'inscrire", new_user_registration_path, class: 'btn btn-primary'%>
-					<% end %>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
