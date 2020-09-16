@@ -1,2 +1,17 @@
-hello
-<%= @user.email %>
+<div class="container">
+<h1 class="mt-4 mb-3">Mon dashboard</h1>
+<hr>
+</br>
+<div class="row">
+
+	<div class="col-lg-3 mb-4" id="sidebar">
+		<div class="list-group">
+			<%= link_to "Mes missions", missions_path, class: "list-group-item", remote: true %>
+			<%= link_to "Mes informations", user_path, class: "list-group-item", remote: true %>
+		</div>
+	</div>
+
+</div>
+</div>
+
+</body>
