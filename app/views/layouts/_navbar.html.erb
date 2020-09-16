@@ -1,5 +1,9 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
+		<a href="<%= root_path %>" class="navbar-brand">
+			<!-- Logo Image -->
+			<img src="https://i.imgur.com/Jb50V23.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+		</a>
 		<%= link_to "Staskme", root_path, class: 'navbar-brand' %>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -7,24 +11,17 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contact</a>
-				</li>
-				<li class="nav-item">
-					<% if current_user %>
-					<%= link_to "Se déconnecter", destroy_user_session_path, method: "delete", class: 'btn btn-danger'%>
-					<% else %>
-					<%= link_to "S'inscrire", new_user_registration_path, class: 'btn btn-primary'%>
-					<% end %>
+					<a class="nav-link" href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-stack-overflow"></i> Profile</a>
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-					<a class="dropdown-item" href="<%= root_path %>">Home</a>
+					<a class="dropdown-item" href="<%= root_path %>"><i class="fa fa-home"></i> Home</a>
 					<% if current_user %>
-						<a class="dropdown-item" href="<%=edit_user_registration_path %>">User</a>
+						<a class="dropdown-item" href="<%=edit_user_registration_path %>"><i class="fa fa-user" aria-hidden="true"></i> User</a>
 					<% end %>
 					<% if !current_user %>
-						<a class="dropdown-item" href="<%= new_user_registration_path %>">Sign Up</a>
+						<a class="dropdown-item" href="<%= new_user_registration_path %>"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a>
 					<% end %>
 				</div>
 				</li>

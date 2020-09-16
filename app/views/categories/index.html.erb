@@ -1,34 +1,36 @@
-<%= render 'carousel' %>
-
-<div class="container">
-
-</br>
-<h2>Créer une mission dès maintenant !</h2>
-<div class="row">
-  <% @categories.each do |category| %>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card h-100">
-      <%= image_tag category.image, class: 'card-img-top' %>
-        <div class="card-body">
-          <h4 class="card-title"><%= category.title %></h4>
-        </div>
-          <div class="card-footer">
-            <%= link_to "Créer une mission", new_mission_path, class: 'btn btn-primary' %>
+</br></br>
+  <%= render 'carousel' %>
+  <div class="container">
+    <div style="text-align: center"> 
+    </br></br>
+      <h1>Proposez une mission dès maintenant !</h1> </br>
+    </div>
+    
+    <div class="row">
+      <% @categories.each do |category| %>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <%= image_tag category.image, class: 'card-img-top' %>
+            <div class="card-body">
+              <h4 class="card-title"><%= category.title %></h4>
+            </div>
+              <div class="card-footer">
+                <%= link_to "Créer une mission", new_mission_path, class: 'btn btn-primary' %>
+              </div>
           </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row mb-4">
+    <% if current_user %>
+    <div class="col-md-8">
+        <p>Vous recherchez emploi stable et formateur ? Nous recrutons !</p>
+      </div>
+      <div class="col-md-4">
+        <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'patch', class: 'btn btn-lg btn-secondary' %>
+      <% end %>
       </div>
     </div>
-  <% end %>
-</div>
-
-<div class="row mb-4">
-<% if current_user %>
-<div class="col-md-8">
-    <p>Vous avez le temps ? Vous recherchez un petit travail pour arrondir les fins de mois ?</p>
-  </div>
-  <div class="col-md-4">
-    <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'patch', class: 'btn btn-lg btn-secondary' %>
-  <% end %>
-  </div>
-</div>
 
 </div>

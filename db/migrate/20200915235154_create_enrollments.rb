@@ -1,6 +1,6 @@
-class CreateEnrolments < ActiveRecord::Migration[6.0]
+class CreateEnrollments < ActiveRecord::Migration[6.0]
   def change
-    create_table :enrolments do |t|
+    create_table :enrollments do |t|
       t.belongs_to :user, index: true
       t.belongs_to :mission, index: true
       t.timestamps

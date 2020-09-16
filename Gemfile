@@ -57,3 +57,4 @@ gem 'table_print'
 gem 'devise'
 gem 'stripe'
 gem 'dotenv-rails'
+gem "font-awesome-rails"
