@@ -7,6 +7,7 @@ class MissionsController < ApplicationController
 
   def index
     @missions = current_user.missions
+    @pending_missions = Mission.where(statut: false)
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js {}

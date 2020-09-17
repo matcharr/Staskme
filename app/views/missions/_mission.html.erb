@@ -1,33 +1,64 @@
+<% if !current_user.employed %>
+  <div class="col-lg-9 mb-4" id="table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Catégorie</th>
+        <th scope="col">Statut</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% missions.each do |mission| %>
+     		<tr id="<%= mission.id %>">
+  		<th scope="row"><%= mission.id %></th>
+  		<td><%= mission.title%></td>
+  		<td><%= mission.description%></td>
+  		<td><%= mission.start_date%></td>
+  		<td><%= mission.category.title%></td>
+  		<% if !mission.statut %>
+  			<td style="">En attente</td>
+  			<td><%= link_to "Supprimer", mission_path(mission.id), method: 'delete', remote: true, class: 'btn btn-danger'%></td>
+  		<% else %>
+  			<td style="color: green;">Terminée</td>
+  		<% end %>
+  		</tr>
+    	<% end %>
+    </tbody>
+  </table>
+    <%= link_to "Créer une nouvelle mission", new_mission_path, class: 'btn btn-primary'%>
+  </div>
+<% elsif current_user.employed %>
 <div class="col-lg-9 mb-4" id="table">
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Titre</th>
-      <th scope="col">Description</th>
-      <th scope="col">Date</th>
-      <th scope="col">Catégorie</th>
-      <th scope="col">Statut</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  	<% missions.each do |mission| %>
-   		<tr id="<%= mission.id %>">
-		<th scope="row"><%= mission.id %></th>
-		<td><%= mission.title%></td>
-		<td><%= mission.description%></td>
-		<td><%= mission.start_date%></td>
-		<td><%= mission.category.title%></td>
-		<% if !mission.statut %>
-			<td style="">En attente</td>
-			<td><%= link_to "Supprimer", mission_path(mission.id), method: 'delete', remote: true, class: 'btn btn-danger'%></td>
-		<% else %>
-			<td style="color: green;">Terminée</td>
-		<% end %>
-		</tr>
-  	<% end %>
-  </tbody>
-</table>
-  <%= link_to "Créer une nouvelle mission", new_mission_path, class: 'btn btn-primary'%>
-</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Catégorie</th>
+        <th scope="col">Statut</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pend_mission.each do |mission| %>
+        <tr id="<%= mission.id %>">
+      <th scope="row"><%= mission.id %></th>
+      <td><%= mission.title%></td>
+      <td><%= mission.description%></td>
+      <td><%= mission.start_date%></td>
+      <td><%= mission.category.title%></td>
+      <td style="">En attente</td>
+      <td><%= link_to "Rejoindre", enrollments_path(:mission_id => mission.id), method: 'post', remote: true, class: 'btn btn-success'%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+<% end %>
