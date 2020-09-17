@@ -1,27 +1,17 @@
 <div class="container">
+    <h1 class="mt-4 mb-3">Mon dashboard admin</h1>
+    <hr>
+    </br>
+    <div class="row">
+      <div class="col-lg-3 mb-4" id="sidebar">
+        <div class="list-group">
+          <%= link_to "Toutes les missions", admin_root_path, class: "list-group-item", remote: true %>
+          <%= link_to "Tous les utilisateurs", users_path, class: "list-group-item", remote: true %>
+          <% if current_user %>
+            <%= link_to "Mes informations", admin_admin_path(current_user.id), class: "list-group-item", remote: true %>
+          <% end %>
+        </div>
+      </div>
 
-<h3 class="text-center">Bienvenue sur votre dashboard admin !</h3>
-
-<div class="card">
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-		<li class="list-group-item">Les employés : </li>
-    	<% @employees.each do |e| %>
-    		<%= link_to e.mail, user_path(e.id), class: 'list-group-item' %>
-    	<% end %>
-	</ul>
+    </div>
   </div>
-</div>
-</br>
-<div class="card">
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-		<li class="list-group-item">Les missions en attente : </li>
-    	<% @pending.each do |mission| %>
-  			<%= link_to mission.title, mission_path(mission.id), class: 'list-group-item' %>
-    	<% end %>
-	</ul>
-  </div>
-</div>
-
-</div>

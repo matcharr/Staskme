@@ -1,0 +1,5 @@
+if (document.getElementById("table")) {
+	document.getElementById("table").remove();
+};
+
+document.getElementById("sidebar").insertAdjacentHTML("afterend", "<%= j render 'user', users: @users%>");
