@@ -10,7 +10,9 @@
       <% @categories.each do |category| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <%= image_tag category.image, class: 'card-img-top' %>
+          <div class="embed-responsive embed-responsive-16by9">
+            <%= image_tag category.image, class: 'card-img-top embed-responsive-item' %>
+          </div>
             <div class="card-body">
               <h4 class="card-title"><%= category.title %></h4>
             </div>
