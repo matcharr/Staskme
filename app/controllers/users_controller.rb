@@ -15,13 +15,21 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def user_finder
-    User.find(params[:id])
+  def index
+    @users = User.all
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
+
+  private
   
   def authenticate_user
-    redirect_to root_path if current_user != user_finder unless current_user.is_admin == true
+    if current_user
+      redirect_to root_path if current_user.is_admin == true || current_user != user_finder 
+    else
+      redirect_to root_path
+    end
   end
 end

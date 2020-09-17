@@ -1,17 +1,34 @@
-<div class="container">
-<h1 class="mt-4 mb-3">Mon dashboard</h1>
-<hr>
-</br>
-<div class="row">
+<% if !@user.employed %>
+	<div class="container">
+		<h1 class="mt-4 mb-3">Mon dashboard utilisateur</h1>
+		<hr>
+		</br>
+		<div class="row">
 
-	<div class="col-lg-3 mb-4" id="sidebar">
-		<div class="list-group">
-			<%= link_to "Mes missions", missions_path, class: "list-group-item", remote: true %>
-			<%= link_to "Mes informations", user_path, class: "list-group-item", remote: true %>
+			<div class="col-lg-3 mb-4" id="sidebar">
+				<div class="list-group">
+					<%= link_to "Mes missions", missions_path, class: "list-group-item", remote: true %>
+					<%= link_to "Mes informations", user_path, class: "list-group-item", remote: true %>
+				</div>
+			</div>
+
 		</div>
 	</div>
+<% elsif @user.employed %>
+	<div class="container">
+		<h1 class="mt-4 mb-3">Mon dashboard employé</h1>
+		<hr>
+		</br>
+		<div class="row">
 
-</div>
-</div>
+			<div class="col-lg-3 mb-4" id="sidebar">
+				<div class="list-group">
+					<%= link_to "Mes missions", enrollment_path(current_user.id), class: "list-group-item", remote: true %>
+					<%= link_to "Les missions en attente", missions_path, class: "list-group-item", remote: true %>
+					<%= link_to "Mes informations", user_path, class: "list-group-item", remote: true %>
+				</div>
+			</div>
 
-</body>
+		</div>
+	</div>
+<% end %>
