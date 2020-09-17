@@ -6,8 +6,8 @@ class MissionsController < ApplicationController
   end
 
   def index
-    @missions = current_user.missions
-    @pending_missions = Mission.where(statut: false)
+    @missions = Mission.where(user_id: current_user.id)
+    @pending_missions = Mission.where(statut: nil)
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js {}
@@ -15,7 +15,7 @@ class MissionsController < ApplicationController
   end
 
   def show 
-    @mission = Mission.find(params[:id])
+    @mission = mission_finder
   end
 
   def create
@@ -43,7 +43,7 @@ class MissionsController < ApplicationController
   end
 
   def destroy
-    @mission = Mission.find(params[:id])
+    @mission = mission_finder
     puts @mission
     respond_to do |format|
       format.html { redirect_to root_path }
@@ -52,7 +52,20 @@ class MissionsController < ApplicationController
     @mission.delete
   end
 
+  def update
+    @mission = mission_finder
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
+    @mission.update(statut: true)
+  end
+
   private
+
+  def mission_finder
+    Mission.find(params[:id])
+  end
 
   def mission_params
     params.require(:mission).permit(:title, :start_date, :description)

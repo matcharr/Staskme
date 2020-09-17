@@ -9,6 +9,7 @@ class EnrollmentsController < ApplicationController
       	format.html {}
       	format.js {}
     	end
+    	@mission.update(statut: false)
   	end
   end
 

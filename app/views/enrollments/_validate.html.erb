@@ -8,6 +8,7 @@
         <th scope="col">Date</th>
         <th scope="col">Catégorie</th>
         <th scope="col">Statut</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -19,8 +20,9 @@
       <td><%= mission.start_date%></td>
       <td><%= mission.category.title%></td>
       <% if !mission.statut %>
-        <td style="">En attente</td>
-      <% else %>
+        <td style="color: orange;" id="statut">En cours</td>
+        <td id="button"> <%= link_to "Valider la mission", mission_path(mission.id), method: 'patch', remote: true, class: 'btn btn-success' %></td>
+      <% elsif mission.statut %>
         <td style="color: green;">Terminée</td>
       <% end %>
       </tr>
