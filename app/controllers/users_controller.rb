@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   end
   
   def authenticate_user
-    redirect_to root_path if current_user != user_finder unless current_user.is_admin == true
+    if current_user
+      redirect_to root_path if current_user != user_finder
+    else
+      redirect_to root_path
+    end
   end
 end
