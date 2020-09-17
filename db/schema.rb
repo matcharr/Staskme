@@ -31,15 +31,6 @@ ActiveRecord::Schema.define(version: 2020_09_17_100622) do
     t.index ["user_id"], name: "index_enrollments_on_user_id"
   end
 
-  create_table "enrolments", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "mission_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["mission_id"], name: "index_enrolments_on_mission_id"
-    t.index ["user_id"], name: "index_enrolments_on_user_id"
-  end
-
   create_table "missions", force: :cascade do |t|
     t.string "title"
     t.text "description"
