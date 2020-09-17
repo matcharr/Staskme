@@ -18,7 +18,7 @@
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
 					<a class="dropdown-item" href="<%= root_path %>"><i class="fa fa-home"></i> Home</a>
 					<% if current_user %>
-						<a class="dropdown-item" href="<%=edit_user_registration_path %>"><i class="fa fa-user" aria-hidden="true"></i> User</a>
+						<a class="dropdown-item" href="<%= user_path(current_user.id) %>"><i class="fa fa-user" aria-hidden="true"></i> User</a>
 					<% end %>
 					<% if !current_user %>
 						<a class="dropdown-item" href="<%= new_user_registration_path %>"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a>
