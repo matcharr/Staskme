@@ -11,8 +11,18 @@ Petite précision, l'entreprise imaginée ici est solidaire et a pour vocation d
 Lien vers heroku : https://staskme.herokuapp.com/
 
 ### Admin
+login: **42@yopmail.com**
+
+password: **123456**
+
 ### Employé
+Un compte employé est verifié par un Admin obligatoirement.
+Possibilité d'y acceder en se connectant ou en s'incrivant.
+Dashboard employé personnel
+
 ### Client
+Possibilité d'y acceder en se connectant ou en s'incrivant.
+Dashboard client personnel
 
 # Configuration locale
 ### Specs
