@@ -11,8 +11,18 @@ Petite précision, l'entreprise imaginée ici est solidaire et a pour vocation d
 Lien vers heroku : https://staskme.herokuapp.com/
 
 ### Admin
+login: **42@yopmail.com**
+
+password: **123456**
+
 ### Employé
+Un compte employé est verifié par un Admin obligatoirement.
+Possibilité d'y acceder en se connectant ou en s'incrivant.
+Dashboard employé personnel
+
 ### Client
+Possibilité d'y acceder en se connectant ou en s'incrivant.
+Dashboard client personnel
 
 # Configuration locale
 ### Specs
@@ -46,6 +56,6 @@ Merci de ta patience !
 - [Monica Richaume](https://www.linkedin.com/in/monica-richaume-36b51841/): apporteuse de projet, pompomgirl, marketing et comm', canard
 - [Rosalie Aguillon ](https://www.linkedin.com/in/rosalie-aguillon-62626b1a3/?originalSubdomain=fr/): responsable technique, gourou, chuchote à l'oreille des geeks, 42
 - [Hugo Marquet](https://www.linkedin.com/in/hugo-marquet-0a9598150/) : développeur Back-end, cuisinier des stars, 42
-- [Mathis Charretier](https://www.linkedin.com/in/mathis-charretier-912256173/) : développeur Front-end, travailleur de la nuit, trublion, 42
+- [Mathis Charretier](https://www.linkedin.com/in/mathis-charretier-912256173/) : développeur Front-end, travailleur de la nuit, 42
 
 

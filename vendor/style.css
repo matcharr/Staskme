@@ -67,9 +67,6 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 
-#topbar.topbar-transparent {
-  background: transparent;
-}
 
 #topbar.topbar-scrolled {
   top: -50px;
@@ -95,9 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(26, 24, 22, 0.85);
 }
 
-#header.header-transparent {
-  background: transparent;
-}
+
 
 #header.header-scrolled {
   top: 0;
@@ -892,7 +887,9 @@ section {
 }
 
 .menu .menu-content::after {
-  content: "......................................................................" "...................................................................." "....................................................................";
+  content: "......................................................................"
+ "...................................................................."
+ "....................................................................";
   position: absolute;
   left: 20px;
   right: 0;
@@ -992,7 +989,7 @@ section {
 # Events
 --------------------------------------------------------------*/
 .events {
-  background: url(../img/events-bg.jpg) center center no-repeat;
+  background: url(https://i.imgur.com/qLC4MDi.jpg) center center no-repeat;
   background-size: cover;
   position: relative;
 }

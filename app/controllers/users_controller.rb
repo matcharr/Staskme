@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, only: [:show]
+  before_action :only_for_client, only: [:update]
 
   def update
     @user = current_user 
-    @user.update(employed:true) 
+    @user.update(employed: true) 
     redirect_to root_path
   end
 

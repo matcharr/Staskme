@@ -8,7 +8,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background: url(https://i.imgur.com/6DwonXF.jpg);">
+      <div class="carousel-item active" style="background-image:url(imgur.com/6DwonXF.jpg);">
           <div class="carousel-container">
             <div class="carousel-content">
               
@@ -75,7 +75,7 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/about.jpg");'>
+          <div class="col-lg-5 align-items-stretch video-box" style="background-image: url('https://i.imgur.com/6DwonXF.jpg')">
             <a href="https://www.youtube.com/watch?v=WBmo11MbW0E&feature=youtu.be
             NOUVEAU
             " class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
@@ -237,6 +237,8 @@
       </div>
     </section><!-- End Specials Section -->
 
+<!-- End Events Section !-->
+
     <!-- ======= Book A Table Section ======= -->
     <section id="book-a-table" class="book-a-table">
       <div class="container">
@@ -249,6 +251,20 @@
         </div>
       </div>
     </section><!-- End Book A Table Section -->
+
+    <section id="book-a-table" class="book-a-table">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Rejoindre <span>L'equipe</span></h2>
+          <p>Eloigné du monde du travail ? vous recherchez de nouvelles opportunités ?</p>
+          </br>
+          <% if current_user %>
+          <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'put', class: 'btn btn-warning' %>
+          <% end %>
+        </div>
+      </div>
+    </section>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

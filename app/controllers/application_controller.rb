@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     User.find(params[:id])
   end
 
+  def only_for_client
+    redirect_to root_path if current_user && (current_user.is_admin || current_user.employed)
+  end
+
 end
