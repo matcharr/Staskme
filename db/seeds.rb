@@ -9,9 +9,9 @@
 Mission.destroy_all
 Category.destroy_all
 
-10.times do
-   Mission.create(title:Faker::Company.industry, description:Faker::Movie.quote, start_date:"2021-01-01")
-end
+# 10.times do
+#    Mission.create(title:Faker::Company.industry, description:Faker::Movie.quote, start_date:"2021-01-01")
+# end
 
 Category.create(title: "Courses, livraison", image: "https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80")
 Category.create(title: "Réception objets, personnes", image: "https://images.unsplash.com/photo-1516733968668-dbdce39c4651?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")
