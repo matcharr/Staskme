@@ -1,38 +1,29 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-	<div class="container">
-		<a href="<%= root_path %>" class="navbar-brand">
-			<!-- Logo Image -->
-			<img src="https://i.imgur.com/Jb50V23.png" width="45" alt="" class="d-inline-block align-middle mr-2">
-		</a>
-		<%= link_to "Staskme", root_path, class: 'navbar-brand' %>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="<%= contact_path %>"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-stack-overflow"></i> Profile</a>
-				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-					<% if !current_user %>
-						<a class="dropdown-item" href="<%= new_user_registration_path %>"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a>	
-					<% elsif current_user.is_admin %>
-						<a class="dropdown-item" href="<%= admin_root_path %>"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
-					<% elsif current_user %>
-						<a class="dropdown-item" href="<%= user_path(current_user.id) %>"><i class="fa fa-user" aria-hidden="true"></i> User</a>
-					<% end %>
-				</div>
-				</li>
-				<li class="nav-item">
-					<% if !current_user %>
-						<%= link_to "Log in", new_user_session_path, type:"button", class:"btn btn-outline-primary navbar-btn" %>
-					<% else %>
-						<%= link_to "Log out", destroy_user_session_path, method: 'delete', type:"button", class:"btn btn-outline-danger navbar-btn" %>
-					<% end %>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+
+  <a href="<%= root_path %>" class="navbar-brand">
+    <!-- Logo Image -->
+    <img src="https://i.imgur.com/Jb50V23.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+  </a>
+  <div class="logo mr-auto">
+    <h1 class="text-light"><a href="<%= root_path %>"><span>Staskme</span></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+  </div>
+
+  <nav class="nav-menu d-none d-lg-block">
+    <ul>
+      <% if !current_user %>
+        <li class="btn-menu animate__animated animate__fadeInUp scrollto"><%= link_to "Se connecter", new_user_session_path%></li>
+        <li class="book-a-table text-center"><%= link_to "S'inscrire", new_user_registration_path%></li>
+      <% elsif !current_user.is_admin %>
+        <li><a href="<%= user_path(current_user.id)%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
+        <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
+      <% else %>
+        <li><a href="<%= admin_root_path%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
+        <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
+      <% end %>      
+    </ul>
+  </nav>
+
+</div>
+</header>
