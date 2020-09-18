@@ -16,7 +16,7 @@ login: **42@yopmail.com**
 password: **123456**
 
 ### Employé
-Un compte employé est verifier par un Admin obligatoirement.
+Un compte employé est verifié par un Admin obligatoirement.
 Possibilité d'y acceder en se connectant ou en s'incrivant.
 Dashboard employé personnel
 
