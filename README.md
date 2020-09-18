@@ -1,73 +1,51 @@
-# Staskme
+```# Notre Projet : Staskme !
+
+Nous vous dévoilons en exclusivité notre travail pour la formation The Hacking Project (**THP**). 
+
+Il s'agit d'un site internet responsive qui permet de réserver des prestations de conciergerie de luxe à destination des Genevois de la classe moyenne. 
+
+Petite précision, l'entreprise imaginée ici est solidaire et a pour vocation de réintégrer des chômeurs de longue durée ou des gens éloignés du marché du travail en leur offrant une formation ainsi qu'un emploi fixe à un salaire digne. 
+
+## Accès
 
 Lien vers heroku : https://staskme.herokuapp.com/
 
-Il s'agit d'un site internet dynamique qui permet de réserver des prestations de conciergerie de luxe mais à destination de la classe moyenne. L'interface te permet de t'inscrire rapidement et de choisir parmi les catégories suivantes :
+### Admin
+### Employé
+### Client
 
-- Courses livraison, lourd
-- Courses livraison
-- Réception de marchandises ou de personnes
-- Ménage
-- Préparation de dîner
-- Garde d'enfants urgente
+# Configuration locale
+### Specs
 
-Le tarif est unique, à savoir 100 CHF (Francs suisses).
+-   Ruby 2.7.1
+-   Rails 6.0.3.2
 
-2. Parcours utilisateur
+### Installation
 
--Côté client : Lorsque qu'un utilisateur/client s’enregistre, il est redirigé vers un Dashboard qui lui permet de sélectionner quelle mission il souhaite voir effectuer. Par la suite il notifié si la mission proposée est acceptée et par quel collaborateur. L’utilisateur peut aussi créer un événement pour cela il doit remplir un formulaire chaque mission a une catégorie. L'utilisateur peut voir ses missions actives dans son profil.
+Pour installer le projet :
 
--Côté collaborateur : lorsque qu'un utilisateur/collaborateur se logue, il est redirigé vers un Dashboard qui lui permet de sélectionner quelle mission il souhaite effectuer. S’il clique sur une mission et qu'il s'enregistre le créateur/client de la mission est notifié qu’un nouvel utilisateur/collaborateur s'est inscrit. L’utilisateur peut aussi créer un événement pour cela il doit remplir un formulaire chaque mission a une catégorie. L'utilisateur peut voir ses missions actives dans son profil.
+1.  Exécutez  `git clone`  pour cloner le projet dans votre environnement
+2.  Exécutez  `cd` pour atteindre le repo
+3.  Exécutez  `bundle install`  pour installer les gems
+4.  Exécutez  `npm install`  pour installer le nécessaire JS
 
+### Base de données & initialisation
 
-3. Concrètement et techniquement
+Pour configurer et peupler la BDD, Exécutez ces commandes :
 
-3.1. Base de données
+1.  Exécutez  `rails db:migrate`  BDD création
+2.  Exécutez  `rails db:migrate:status`  vérification des migrations
+3.  Exécutez  `rails db:seed`  peuplement de la BDD
 
-Un prototype de BDD pour notre projet :
+## Le mentor
+Julien Tribouillier (https://www.linkedin.com/in/julien-tribouillier), ancien de THP. C'est actuellement un Développeur Freelance Ruby on Rails Backend.
 
-Un model User
-Un model Mission
-Un user peut s’inscrire à plusieurs missions et une mission peut avoir qu'un seul user. On passera par une table de jointure appelée Enrolment
+Merci de ta patience !
 
-3.2. Front :
--Une première page qui vous obligera à vous inscrire pour acceder à tout.
-ie : Fb, Insta etc...
+## Autrices et Auteurs
+[Monica Richaume](https://www.linkedin.com/in/monica-richaume-36b51841/): apporteuse de projet, pompomgirl, marketing et comm', canard
+ [Rosalie Aguillon ](https://www.linkedin.com/in/rosalie-aguillon-62626b1a3/?originalSubdomain=fr/): responsable technique, gourou, chuchote à l'oreille des geeks, 42
+ [Hugo Marquet](https://www.linkedin.com/in/hugo-marquet-0a9598150/) : développeur Back-end, cuisinier des stars, 42
+[Mathis Charretier](https://www.linkedin.com/in/mathis-charretier-912256173/) : développeur Front-end, travailleur de la nuit, trublion, 42
 
--Formulaire d'inscription +connexion + suppression de compte
-
--Des cards pour les profils mais aussi utilisable pour la mise en place de certain service qui seront proposer.
-
--Utilisation d'un Kit UI et/ou Bootstrap pour du responsive design.
-
--Ajout de slider ou d'animation en js.
-
--Le changement de leurs coordonnées sera autorisé y compris leur donne de connexion au site etc.
-
-
-3.3. Back
-Quelques services et outils qu’on va utiliser pour notre projet final :
-
-Un service qui permet aux utilisateurs de s’inscrire et de s'identifier (Devise)
-Un outil pour envoyer des mails aux utilisateurs quand il rejoigne le site ou qu’ils acceptent/proposent une mission (Action Mailer)
-Des sessions administrateurs qu’on implémentera nous même avec namespaces pour que les personnes proposant une mission puissent la modifier ou la fermer
-Des cookies qu’on utilisera pour stocker les identifiants des utilisateurs sur leurs navigateurs
-Un système de paiement qui permettra de payer les honoraires (Stripe)
-
-
-3.4. Mes besoins techniques
-
-4 personnes coéquipiers. Deux plus à l'aise en Back et deux en Front.
-
-4. La version minimaliste mais fonctionnelle qu'il faut avoir livré la première semaine
--Possibilité de se connecter en admin ou en collaborateur
--Possibilité de créer des missions
-
-
-5. La version que l'on présentera aux jurys
-Un site internet fonctionnel permettant de pouvoir s'inscrire, se connecter, payer et de proposer/accepter des missions.
-
-6. Le mentor
-Comme mentor, nous avons Julien Tribouillier(https://www.linkedin.com/in/julien-tribouillier), ancien de THP. C'est actuellement un Développeur Freelance Ruby on Rails Backend.
-
-
+```
