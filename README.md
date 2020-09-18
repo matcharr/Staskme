@@ -1,4 +1,4 @@
-```# Notre Projet : Staskme !
+# Notre Projet : Staskme !
 
 Nous vous dévoilons en exclusivité notre travail pour la formation The Hacking Project (**THP**). 
 
@@ -48,4 +48,4 @@ Merci de ta patience !
  [Hugo Marquet](https://www.linkedin.com/in/hugo-marquet-0a9598150/) : développeur Back-end, cuisinier des stars, 42
 [Mathis Charretier](https://www.linkedin.com/in/mathis-charretier-912256173/) : développeur Front-end, travailleur de la nuit, trublion, 42
 
-```
+
