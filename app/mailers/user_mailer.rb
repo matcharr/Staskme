@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
     @user = user
 
     @url = "https://staskme.herokuapp.com/"
-    mail(to: @user.email, subject: 'Bienvenue chez nous !')
+    mail(to: @user.email)
 	end
 end
