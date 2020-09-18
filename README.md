@@ -38,6 +38,7 @@ Pour installer le projet :
 2.  Exécutez  `cd` pour atteindre le repo
 3.  Exécutez  `bundle install`  pour installer les gems
 4.  Exécutez  `npm install`  pour installer le nécessaire JS
+5.  Exécutez  `yarn install --check-file` pour installer Yarn
 
 ### Base de données & initialisation
 
