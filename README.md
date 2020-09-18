@@ -11,8 +11,16 @@ Petite précision, l'entreprise imaginée ici est solidaire et a pour vocation d
 Lien vers heroku : https://staskme.herokuapp.com/
 
 ### Admin
+login: ******
+password: *****
+
 ### Employé
+Possibilité d'y acceder en se connectant ou en s'incrivant.
+Dashboard employé personnel
+
 ### Client
+Possibilité d'y acceder en se connectant ou en s'incrivant.
+Dashboard client personnel
 
 # Configuration locale
 ### Specs
