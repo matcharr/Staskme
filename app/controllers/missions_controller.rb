@@ -1,5 +1,6 @@
 class MissionsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :only_for_client, only: [:new]
 
   def new
     @mission = Mission.new
@@ -65,6 +66,10 @@ class MissionsController < ApplicationController
 
   def mission_finder
     Mission.find(params[:id])
+  end
+
+  def only_for_client
+    redirect_to root_path if current_user && (current_user.is_admin || current_user.employed)
   end
 
   def mission_params
