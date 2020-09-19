@@ -18,7 +18,6 @@ class MissionsController < ApplicationController
   def create
     @mission = Mission.new(mission_params)
     @mission.user_id = current_user.id
-    @mission.category = Category.last
     if @mission.save
       @amount = 1000
       customer = Stripe::Customer.create({
@@ -33,6 +32,10 @@ class MissionsController < ApplicationController
         currency: 'chf',
       })
       redirect_to root_path
+    else
+      flash[:alert] = ""
+      @mission.errors.messages.each { |key, value | flash[:alert] << "#{key} #{value.first}. " }
+      redirect_to new_mission_path
     end
     rescue Stripe::CardError => e
       flash[:error] = e.message
@@ -65,6 +68,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_params
-    params.require(:mission).permit(:title, :start_date, :description)
+    params.require(:mission).permit(:title, :start_date, :description, :category_id)
   end
 end

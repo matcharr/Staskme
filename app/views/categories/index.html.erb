@@ -2,6 +2,54 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
+<%= render 'carousel' %>
+
+<main id="main">
+
+  <%= render 'about' %>
+  <%= render 'whyus' %>
+  <%= render 'operation' %>
+
+<!-- ======= Create a Mission Section ======= -->
+  <section id="book-a-table" class="book-a-table">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Créer une <span>Mission</span></h2>
+        <p>Pour créer une mission rien de plus simple, choisissez une catégorie et remplissez le formulaire</p>
+        </br>
+        <% if current_user && current_user.is_admin %>
+          <p>En tant qu'admin, vous ne pouvez pas créer de mission.</p>
+        <% elsif current_user && current_user.employed%>
+          <p>En tant qu'employé, vous ne pouvez pas créer de mission</p>
+        <% else %>
+          <%= link_to "Créer une mission", new_mission_path, class: "btn btn-warning" %>
+        <% end %>
+      </div>
+    </div>
+  </section><!-- End Create a Mission Section -->
+
+<!-- ======= Join a Team Section ======= -->
+  <section id="book-a-table" class="book-a-table">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Rejoindre <span>L'équipe</span></h2>
+        <p>Eloigné du monde du travail ? vous recherchez de nouvelles opportunités ?</p>
+        </br>
+        <% if current_user && current_user.is_admin%>
+          <p>En tant qu'admin, vous faites déjà parti de l'équipe.</p>
+        <% elsif current_user && current_user.employed %>
+          <p>Bienvenue dans l'équipe :)</p>
+        <% elsif current_user && !current_user.employed %>
+          <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'put', class: 'btn btn-warning' %>
+        <% else %>
+          <p>Inscrivez-vous pour nous rejoindre !</p>
+        <% end %>
+      </div>
+    </div>
+  </section><!-- End Join a Team Section -->
+=======
 <!-- ======= Hero Section ======= -->
 <section id="hero">
   <div class="hero-container">
@@ -310,31 +358,3 @@
           </div>
         </div>
         </form>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main
-  <%= render 'layouts/footer' %>  <footer id="footer">
-    <div class="container">
-      <h3>Delicious</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Delicious</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
