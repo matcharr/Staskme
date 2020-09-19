@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :only_for_client, only: [:update]
 
   def update
-    @user = current_user 
+    @user = current_user
+    Mission.where(user_id: @user.id).destroy_all
     @user.update(employed: true) 
     redirect_to root_path
   end

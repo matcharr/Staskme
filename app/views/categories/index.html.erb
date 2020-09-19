@@ -18,7 +18,13 @@
         <h2>Créer une <span>Mission</span></h2>
         <p>Pour créer une mission rien de plus simple, choisissez une catégorie et remplissez le formulaire</p>
         </br>
-        <a href="<%= new_mission_path %>" class="btn btn-warning">Créer une mission</a>
+        <% if current_user && current_user.is_admin %>
+          <p>En tant qu'admin, vous ne pouvez pas créer de mission.</p>
+        <% elsif current_user && current_user.employed%>
+          <p>En tant qu'employé, vous ne pouvez pas créer de mission</p>
+        <% else %>
+          <%= link_to "Créer une mission", new_mission_path, class: "btn btn-warning" %>
+        <% end %>
       </div>
     </div>
   </section><!-- End Create a Mission Section -->
@@ -28,10 +34,14 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Rejoindre <span>L'equipe</span></h2>
+        <h2>Rejoindre <span>L'équipe</span></h2>
         <p>Eloigné du monde du travail ? vous recherchez de nouvelles opportunités ?</p>
         </br>
-        <% if current_user %>
+        <% if current_user && current_user.is_admin%>
+          <p>En tant qu'admin, vous faites déjà parti de l'équipe.</p>
+        <% elsif current_user && current_user.employed %>
+          <p>Bienvenue dans l'équipe :)</p>
+        <% elsif current_user && !current_user.employed %>
           <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'put', class: 'btn btn-warning' %>
         <% else %>
           <p>Inscrivez-vous pour nous rejoindre !</p>
