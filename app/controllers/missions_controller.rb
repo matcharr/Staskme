@@ -18,7 +18,6 @@ class MissionsController < ApplicationController
   def create
     @mission = Mission.new(mission_params)
     @mission.user_id = current_user.id
-    @mission.category = Category.last
     if @mission.save
       @amount = 1000
       customer = Stripe::Customer.create({
@@ -65,6 +64,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_params
-    params.require(:mission).permit(:title, :start_date, :description)
+    params.require(:mission).permit(:title, :start_date, :description, :category_id)
   end
 end
