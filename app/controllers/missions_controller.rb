@@ -15,10 +15,6 @@ class MissionsController < ApplicationController
     end
   end
 
-  def show 
-    @mission = mission_finder
-  end
-
   def create
     @mission = Mission.new(mission_params)
     @mission.user_id = current_user.id

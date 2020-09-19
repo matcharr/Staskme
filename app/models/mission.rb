@@ -4,10 +4,10 @@ class Mission < ApplicationRecord
     has_many :users, through: :enrollments
 
     validates :title, presence: true
-    # validates :title, length: { in: 3..100 }
+    validates :title, length: { in: 3..100 }
 
     validates :description, presence: true
-    # validates :description, length: { in: 20..200 }
+    validates :description, length: { in: 10..200 }
 
     validates :start_date, presence: true
     validate :in_the_past?
