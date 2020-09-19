@@ -32,6 +32,10 @@ class MissionsController < ApplicationController
         currency: 'chf',
       })
       redirect_to root_path
+    else
+      flash[:alert] = ""
+      @mission.errors.messages.each { |key, value | flash[:alert] << "#{key} #{value.first}. " }
+      redirect_to new_mission_path
     end
     rescue Stripe::CardError => e
       flash[:error] = e.message

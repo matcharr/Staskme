@@ -15,7 +15,7 @@ class Mission < ApplicationRecord
     private
 
     def in_the_past?
-        errors.add(:start_date, message: "The start_date must be in the future") unless start_date > DateTime.now
+        errors.add(:start_date, "must be in the future") unless start_date > DateTime.now
     end
 
 end

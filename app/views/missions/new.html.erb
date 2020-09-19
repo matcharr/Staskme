@@ -6,6 +6,13 @@
         <h1 class="display-4">Créer votre mission</h1>
       </div>
 
+      <% flash.each do |type, msg| %>
+        <% if type == "alert" %>
+        <div class="alert alert-danger" role="alert">
+          <%= msg %>
+        </div>
+        <% end %>
+      <% end %>
       <%= form_for @mission do |f| %>
       <div class="form-group">
         <label>Titre de la mission </label>
@@ -25,7 +32,7 @@
 
       <div class="form-group">
         <label>Catégories : </label>
-        <%= f.select :category_id, Category.all.collect { |c| [c.title, c.id] }, class: 'form-control'%>
+        <%= f.select :category_id, Category.all.collect { |c| [c.title, c.id] }, class: 'form-control', include_blank: true %>
       </div>
 
       <%= form_tag missions_path do %>
