@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   root 'categories#index'
-  get '/contact', to: 'contact#index'
   devise_for :users
   resources :users, only: [:show, :update, :index]
-  resources :missions, except: [:edit]
+  resources :missions, except: [:edit, :show]
   resources :enrollments, only: [:create, :show]
   namespace :admin do
     root 'admin#index'
