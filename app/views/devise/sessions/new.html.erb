@@ -1,29 +1,29 @@
-
 <%= stylesheet_link_tag "login.css" %>
-
-
 </br></br></br></br></br></br></br></br>
 <body id="LoginForm">
-<div class="container">    
-<div class="login-form">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin mt-3"}) do |f| %>
-<div class="main-div"> 
-    <div class="panel">
-   <h2>Login</h2>
-   <p>s'il vous plait entrer votre adresse email</p>
-   </div>
-    <form id="Login">
-        <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail", placeholder: "Enter email" %>
+    <div class="container">    
+        <div class="login-form">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin mt-3"}) do |f| %>
+                <div class="main-div"> 
+                    <div class="panel">
+                        <h2>Login</h2>
+                        <p>s'il vous plait entrer votre adresse email</p>
+
+                            <form id="Login">
+                                <div class="form-group">
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id:"inputEmail", placeholder: "Enter email" %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id:"exampleInputPassword1", placeholder:"Password", autocomplete:"off" %>
+                                </div>
+                            
+                                <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
+                            </form>
+                <% end %>
+                <div class="form-group text-center forgot">
+                    <p> New around here?<%= render "devise/shared/links" %></p>     
+                </div>
+            </div>
+        </div>
     </div>
-     <div class="form-group">
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", id:"exampleInputPassword1", placeholder:"Password", autocomplete:"off" %>
-      </div>
-      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
-    </form>
-    <% end %>
-    <div class="form-group text-center forgot">
-        <p> New around here?<%= render "devise/shared/links" %></p>     
-    </div>
-    </div>
-</div></div></div>
+</div>
