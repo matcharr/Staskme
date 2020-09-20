@@ -1,3 +1,10 @@
+<head>
+  <style>
+  .d-none {
+    display: block;
+}
+  </style>
+<head>
 <header id="header" class="fixed-top d-flex align-items-center header-transparent" style="top:0px">
   <div class="container d-flex align-items-center">
     <div>
@@ -7,14 +14,14 @@
       </a>
     </div>
     <div class="logo mr-auto">
-        <h1 class="text-light"><a href="<%= root_path %>"><span>Staskme</span></a></h1>
-      </div>
+      <h1 class="text-light"><a href="<%= root_path %>"><span>Staskme</span></a></h1>
+    </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <% if !current_user %>
             <li class="btn-menu animate__animated animate__fadeInUp scrollto"><%= link_to "Se connecter", new_user_session_path%></li>
-            <li class="book-a-table text-center"><%= link_to "S'inscrire", new_user_registration_path%></li>
+            <li class="book-a-table text-center nav-link"><%= link_to "S'inscrire", new_user_registration_path%></li>
           <% elsif !current_user.is_admin %>
             <li><a href="<%= user_path(current_user.id)%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
             <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
