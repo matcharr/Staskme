@@ -36,14 +36,14 @@
         <h2>Rejoindre <span>l'équipe</span></h2>
         <p>Eloigné du monde du travail ? vous recherchez de nouvelles opportunités ?</p>
         </br>
+
         <% if current_user && current_user.is_admin%>
           <p>En tant qu'admin, vous faites déjà parti de l'équipe.</p>
         <% elsif current_user && current_user.employed %>
           <p>Bienvenue dans l'équipe :)</p>
-        <% elsif current_user && !current_user.employed %>
-          <%= link_to "Rejoindre l'équipe", user_path(current_user.id), method: 'put', class: 'btn btn-warning' %>
         <% else %>
           <p>Inscrivez-vous pour nous rejoindre !</p>
+          <%= link_to "Rejoindre l'équipe", new_user_registration_path, class: 'btn btn-warning'%>
         <% end %>
       </div>
     </div>
