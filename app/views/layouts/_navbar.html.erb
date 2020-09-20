@@ -1,29 +1,26 @@
-<header id="header" class="fixed-top d-flex align-items-center" style="top:0px;">
+<header id="header" class="fixed-top d-flex align-items-center" style="top:0px">
   <div class="container d-flex align-items-center">
+      <a href="<%= root_path %>" class="navbar-brand">
+        <!-- Logo Image -->
+        <img src="https://i.imgur.com/Jb50V23.png" width="45" alt="" class="d-inline-block align-middle mr-2 width="45"">
+      </a>
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="<%= root_path %>"><span>Staskme</span></a></h1>
+      </div>
 
-  <a href="<%= root_path %>" class="navbar-brand">
-    <!-- Logo Image -->
-    <img src="https://i.imgur.com/Jb50V23.png" width="45" alt="" class="d-inline-block align-middle mr-2">
-  </a>
-  <div class="logo mr-auto">
-    <h1 class="text-light"><a href="<%= root_path %>"><span>Staskme</span></a></h1>
-    <!-- Uncomment below if you prefer to use an image logo -->
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <% if !current_user %>
+            <li class="btn-menu animate__animated animate__fadeInUp scrollto"><%= link_to "Se connecter", new_user_session_path%></li>
+            <li class="book-a-table text-center"><%= link_to "S'inscrire", new_user_registration_path%></li>
+          <% elsif !current_user.is_admin %>
+            <li><a href="<%= user_path(current_user.id)%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
+            <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
+          <% else %>
+            <li><a href="<%= admin_root_path%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
+            <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
+          <% end %>      
+        </ul>
+      </nav>
   </div>
-
-  <nav class="nav-menu d-none d-lg-block">
-    <ul>
-      <% if !current_user %>
-        <li class="btn-menu animate__animated animate__fadeInUp scrollto"><%= link_to "Se connecter", new_user_session_path%></li>
-        <li class="book-a-table text-center"><%= link_to "S'inscrire", new_user_registration_path%></li>
-      <% elsif !current_user.is_admin %>
-        <li><a href="<%= user_path(current_user.id)%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
-        <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
-      <% else %>
-        <li><a href="<%= admin_root_path%>" class="btn btn-warning"><i class="fa fa-user"></i></a>
-        <li class="book-a-table text-center"><%= link_to "Se déconnecter", destroy_user_session_path, method: 'delete'%></li>
-      <% end %>      
-    </ul>
-  </nav>
-
-</div>
 </header>
