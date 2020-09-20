@@ -16,13 +16,10 @@ login: **42@yopmail.com**
 password: **123456**
 
 ### Employé
-Un compte employé est verifié par un Admin obligatoirement.
-Possibilité d'y acceder en se connectant ou en s'incrivant.
-Dashboard employé personnel
+Un compte employé est vérifié par un Admin obligatoirement. Possibilité d'y accéder en se connectant ou en s'incrivant. Dashboard employé personnel
 
 ### Client
-Possibilité d'y acceder en se connectant ou en s'incrivant.
-Dashboard client personnel
+Possibilité d'y accéder en se connectant ou en s'incrivant. Dashboard client personnel
 
 # Configuration locale
 ### Specs
@@ -49,12 +46,12 @@ Pour configurer et peupler la BDD, Exécutez ces commandes :
 3.  Exécutez  `rails db:seed`  peuplement de la BDD
 
 ## Le mentor
-Julien Tribouillier (https://www.linkedin.com/in/julien-tribouillier), ancien de THP. C'est actuellement un Développeur Freelance Ruby on Rails Backend.
+Julien Tribouillier (https://www.linkedin.com/in/julien-tribouillier), ancien de THP. C'est actuellement un développeur Freelance Ruby on Rails Backend.
 
 Merci de ta patience !
 
 ## Autrices et Auteurs
-- [Monica Richaume](https://www.linkedin.com/in/monica-richaume-36b51841/): apporteuse de projet, pompomgirl, marketing et comm', canard
+- [Monica Richaume](https://www.linkedin.com/in/monica-richaume-36b51841/): apporteuse de projet, pom-pom girl, marketing et comm', canard
 - [Rosalie Aguillon ](https://www.linkedin.com/in/rosalie-aguillon-62626b1a3/?originalSubdomain=fr/): responsable technique, gourou, chuchote à l'oreille des geeks, 42
 - [Hugo Marquet](https://www.linkedin.com/in/hugo-marquet-0a9598150/) : développeur Back-end, cuisinier des stars, 42
 - [Mathis Charretier](https://www.linkedin.com/in/mathis-charretier-912256173/) : développeur Front-end, travailleur de la nuit, animateur, 42
